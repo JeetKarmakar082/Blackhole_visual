@@ -1,0 +1,98 @@
+body { 
+  margin: 0; overflow: hidden; 
+  background: radial-gradient(ellipse at center, #000011 0%, #000000 70%); 
+  font-family: system-ui; 
+}
+
+.timeDilationClock {
+  position: fixed; top: 20px; right: 20px; width: 120px; height: 120px;
+  border-radius: 50%; border: 3px solid #ffaa44;
+  background: radial-gradient(circle, rgba(41, 24, 2, 0.564), rgba(0, 0, 0, 0.993));
+  /* background-color: black; */
+  box-shadow: 0 0 20px #ffaa44;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 100;
+}
+
+#hand {
+  position: absolute; width: 4px; height: 45px; background: #ffaa44;
+  border-radius: 2px; transform-origin: bottom center; bottom: 50%; left: 50%;
+  margin-left: -2px; box-shadow: 0 0 8px #ffaa44;
+  transition: transform 0.1s ease-out;
+}
+
+#centerDot {
+  position: absolute; width: 12px; height: 12px; background: #ffaa44;
+  border-radius: 50%; box-shadow: 0 0 10px #ffaa44;
+}
+
+.timeDilationClock span {
+  position: absolute; bottom: -25px; color: #ffaa44; font-size: 12px;
+  font-family: monospace; text-align: center; width: 120px;
+  border: 2px solid black;
+  background-color: black;
+}
+
+#timeLabel { text-align: center; font-weight: bold; }
+
+#speedLabel {
+  position: absolute;
+  top: 8px;
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  color: #ffffff;
+  font-family: monospace;
+}
+
+.panel {
+  position: fixed; top: 10px; left: 10px; 
+  background: rgba(0,0,20,0.95); padding: 12px; color: #fff; 
+  border: 2px solid #ffaa44; z-index: 10; border-radius: 8px; 
+  min-width: 180px; font-size: 12px; box-shadow: 0 0 20px #ffaa44;
+}
+
+.panel input[type="range"] { 
+  width: 100%; margin: 6px 0; height: 8px; accent-color: #ffaa44; 
+}
+
+.panel button { 
+  display: block; width: 100%; margin: 4px 0; padding: 8px 10px;
+  background: linear-gradient(45deg, #1a1a3a, #2a2a5a); color: #fff; 
+  border: 1px solid #ffaa44; border-radius: 4px; cursor: pointer; 
+  font-size: 11px; font-weight: bold;
+}
+
+.panel button:hover { 
+  background: linear-gradient(45deg, #ffaa44, #ffdd88); color: #000; 
+}
+
+.panel label { 
+  font-size: 11px; display: block; margin: 2px 0; color: #ffaa44; 
+}
+
+#massDisplay { font-size: 10px; color: #ffaa44; font-weight: bold; }
+
+.story {
+  position: fixed; right: 10px; top: 50%; transform: translateY(-50%);
+  width: 300px; background: rgba(0,0,20,0.9); padding: 15px; color: #fff;
+  backdrop-filter: blur(15px); border-radius: 8px; border: 1px solid #ffaa44;
+  font-size: 13px; box-shadow: 0 0 20px rgba(255,170,68,0.3);
+}
+
+#timeRatio, #dilationDisplay {
+  color: #ffaa44; font-weight: bold; font-size: 16px;
+}
+
+
+#outerRing {
+  position: absolute; width: 72px; height: 72px; border: 2px solid rgba(255,170,68,0.6);
+  border-radius: 50%; box-shadow: inset 0 0 8px rgba(255,255,255,0.2);
+}
+
+#zoomDisplay {
+  position: fixed; bottom: 10px; left: 10px; color: #fff; font-size: 14px;
+  font-weight: bold; z-index: 10; background: rgba(0,0,20,0.9); 
+  padding: 8px 12px; border-radius: 6px; border: 1px solid #ffaa44; 
+  box-shadow: 0 0 10px rgba(255,170,68,0.5);
+}

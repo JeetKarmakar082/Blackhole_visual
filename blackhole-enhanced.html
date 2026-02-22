@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GARGANTUA - Event Horizon + Singularity</title>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<link rel="stylesheet" href="gar_style.css">
+</head>
+<body>
+<div class="panel">
+  <h3>🌌 GARGANTUA</h3>
+  <label>Go Near BH: <input type="range" id="zoomSlider" min="30" max="800" step="10" value="400"></label>
+  <label>Orbit: <input type="range" id="orbitSpeed" min="0" max="0.015" step="0.0005" value="0.003"></label>
+  <label>Gas Flow: <input type="range" id="gasIntensity" min="0.5" max="5" step="0.2" value="2.8"></label>
+  <label>Mass: <input type="range" id="bhSize" min="25" max="80" step="3" value="42"><span id="massDisplay">100M☉</span></label>
+  <button onclick="toggleRays()">Photon Rays</button>
+  <button onclick="toggleGas()">Gas Disk</button>
+  <button onclick="resetView()">Reset</button>
+</div>
+
+<div class="story" id="storyPanel">
+  <h4 id="storyTitle">🛸 Approaching Gargantua</h4>
+  <p id="storyText">Slide RIGHT to approach the event horizon. Clock slows smoothly with distance. Very close = singularity!</p>
+</div>
+
+
+<div id="clock" class="timeDilationClock">
+  <div id="hand"></div>
+  <div id="centerDot"></div>
+  <span>Real Time</span>
+</div>
+
+<div id="zoomDisplay">Distance: 400m</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="blackhole-enhanced.js"></script>
+<script>
+window.toggleRays = toggleRays;
+window.toggleGas = toggleGas;
+window.resetView = resetView;
+</script>
+</body>
+</html>
